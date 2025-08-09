@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você, Meu Amor Eterno 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0a;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            color: #fff;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%);
+            animation: bgShift 20s ease infinite;
+            z-index: 1;
+        }
+
+        @keyframes bgShift {
+            0%, 100% { 
+                background: 
+                    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
+                    linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%);
+            }
+            33% { 
+                background: 
+                    radial-gradient(circle at 60% 30%, rgba(255, 119, 198, 0.4) 0%, transparent 50%),
+                    radial-gradient(circle at 30% 70%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 70% 60%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+                    linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%);
+            }
+            66% { 
+                background: 
+                    radial-gradient(circle at 80% 60%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 40%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 50% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
+                    linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%);
+            }
+        }
+
+        /* Starry Sky */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        .star.small { width: 1px; height: 1px; }
+        .star.medium { width: 2px; height: 2px; }
+        .star.large { width: 3px; height: 3px; }
+
+        @keyframes twinkle {
+            0%, 100% { 
+                opacity: 0.3; 
+                transform: scale(0.8);
+                box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.2);
+                box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+            }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(45deg, #fff, transparent);
+            border-radius: 50%;
+            animation: shoot 3s linear infinite;
+        }
+
+        @keyframes shoot {
+            0% {
+                transform: translateX(-100px) translateY(100px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw) translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Floating Hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatUp 8s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+                transform: translateY(90vh) rotate(45deg) scale(1);
+            }
+            90% {
+                opacity: 0.8;
+                transform: translateY(10vh) rotate(315deg) scale(1);
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Magical Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: particleFloat 12s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) scale(0);
+                opacity: 0;
+            }
+            10% {
+                transform: translateY(-20px) translateX(10px) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) translateX(-20px) scale(1.2);
+                opacity: 0.8;
+            }
+            90% {
+                transform: translateY(-180px) translateX(30px) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Title Section with Enhanced Animation */
+        .title-section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: titleEntrance 3s ease forwards;
+        }
+
+        @keyframes titleEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateY(-10px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .title-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 2rem;
+        }
+
+        .title-icon {
+            font-size: 3rem;
+            animation: iconPulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.8));
+        }
+
+        .title-icon:nth-child(1) { animation-delay: 0s; }
+        .title-icon:nth-child(2) { animation-delay: 0.5s; }
+        .title-icon:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes iconPulse {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg); 
+                filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.8));
+            }
+            50% { 
+                transform: scale(1.3) rotate(10deg); 
+                filter: drop-shadow(0 0 20px rgba(255, 182, 193, 1));
+            }
+        }
+
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b9d, #feca57, #ff9ff3, #54a0ff, #ff6b9d);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite, titleGlow 4s ease-in-out infinite;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 40px rgba(255, 107, 157, 0.6);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 600;
+            background: linear-gradient(45deg, #a8edea, #fed6e3, #d299c2, #fef9d7, #a8edea);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite reverse;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.4));
+                transform: scale(1);
+            }
+            50% { 
+                filter: drop-shadow(0 0 40px rgba(255, 107, 157, 0.8));
+                transform: scale(1.02);
+            }
+        }
+
+        .star-decoration {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .star-decoration span {
+            font-size: 1.8rem;
+            color: #feca57;
+            animation: starDance 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(254, 202, 87, 0.8));
+        }
+
+        .star-decoration span:nth-child(1) { animation-delay: 0s; }
+        .star-decoration span:nth-child(2) { animation-delay: 0.3s; }
+        .star-decoration span:nth-child(3) { animation-delay: 0.6s; }
+        .star-decoration span:nth-child(4) { animation-delay: 0.9s; }
+        .star-decoration span:nth-child(5) { animation-delay: 1.2s; }
+
+        @keyframes starDance {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg); 
+                opacity: 0.8;
+            }
+            25% { 
+                transform: scale(1.4) rotate(90deg); 
+                opacity: 1;
+            }
+            50% { 
+                transform: scale(1.2) rotate(180deg); 
+                opacity: 0.9;
+            }
+            75% { 
+                transform: scale(1.3) rotate(270deg); 
+                opacity: 1;
+            }
+        }
+
+        /* Enhanced Message Card */
+        .message-card {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(30px);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 80px rgba(255, 107, 157, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: cardEntrance 3s ease 1.5s forwards;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b9d, #feca57, #ff9ff3, #54a0ff);
+            border-radius: 32px;
+            z-index: -1;
+            opacity: 0;
+            animation: borderGlow 4s ease infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes cardEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            70% {
+                opacity: 0.8;
+                transform: translateY(-10px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .message-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.4),
+                0 0 100px rgba(255, 107, 157, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .message-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            animation: heartBeat 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { 
+                transform: scale(1); 
+                filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+            }
+            14% { 
+                transform: scale(1.2); 
+                filter: drop-shadow(0 0 25px rgba(255, 182, 193, 1));
+            }
+            28% { 
+                transform: scale(1); 
+                filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+            }
+            42% { 
+                transform: scale(1.2); 
+                filter: drop-shadow(0 0 25px rgba(255, 182, 193, 1));
+            }
+            70% { 
+                transform: scale(1); 
+                filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+            }
+        }
+
+        .message-text {
+            font-size: 1.4rem;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .message-text strong {
+            background: linear-gradient(45deg, #ff6b9d, #feca57, #ff9ff3);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            animation: gradientShift 3s ease infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.6));
+        }
+
+        .message-emojis {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .message-emojis span {
+            font-size: 2rem;
+            animation: emojiDance 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        .message-emojis span:nth-child(1) { animation-delay: 0s; }
+        .message-emojis span:nth-child(2) { animation-delay: 0.4s; }
+        .message-emojis span:nth-child(3) { animation-delay: 0.8s; }
+        .message-emojis span:nth-child(4) { animation-delay: 1.2s; }
+        .message-emojis span:nth-child(5) { animation-delay: 1.6s; }
+
+        @keyframes emojiDance {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg) scale(1); 
+            }
+            25% { 
+                transform: translateY(-15px) rotate(10deg) scale(1.2); 
+            }
+            50% { 
+                transform: translateY(-5px) rotate(-5deg) scale(1.1); 
+            }
+            75% { 
+                transform: translateY(-10px) rotate(5deg) scale(1.15); 
+            }
+        }
+
+        /* Enhanced Video Section */
+        .video-section {
+            margin: 4rem auto;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: videoEntrance 3s ease 2.5s forwards;
+        }
+
+        @keyframes videoEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+            70% {
+                opacity: 0.9;
+                transform: translateY(-5px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .video-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 60px rgba(255, 107, 157, 0.5),
+                0 20px 60px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ff6b9d, #feca57, #ff9ff3, #54a0ff, #ff6b9d);
+            background-size: 400% 400%;
+            border-radius: 33px;
+            z-index: -1;
+            animation: borderFlow 6s ease infinite;
+        }
+
+        @keyframes borderFlow {
+            0%, 100% { 
+                background-position: 0% 50%;
+                opacity: 0.8;
+            }
+            50% { 
+                background-position: 100% 50%;
+                opacity: 1;
+            }
+        }
+
+        .video-container:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 
+                0 0 100px rgba(255, 107, 157, 0.8),
+                0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 27px;
+            display: block;
+            filter: brightness(1.1) contrast(1.1) saturate(1.2);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, #ff6b9d, #feca57, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease infinite;
+            border-radius: 27px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            text-align: center;
+            padding: 3rem;
+            line-height: 1.8;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Bottom Hearts with Enhanced Animation */
+        .bottom-hearts {
+            margin-top: 4rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            animation: heartsEntrance 3s ease 3.5s forwards;
+        }
+
+        @keyframes heartsEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bottom-hearts span {
+            font-size: 2.5rem;
+            animation: heartFloat 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+        }
+
+        .bottom-hearts span:nth-child(1) { animation-delay: 0s; }
+        .bottom-hearts span:nth-child(2) { animation-delay: 0.4s; }
+        .bottom-hearts span:nth-child(3) { animation-delay: 0.8s; }
+        .bottom-hearts span:nth-child(4) { animation-delay: 1.2s; }
+        .bottom-hearts span:nth-child(5) { animation-delay: 1.6s; }
+
+        @keyframes heartFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg) scale(1); 
+                filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+            }
+            25% { 
+                transform: translateY(-20px) rotate(10deg) scale(1.2); 
+                filter: drop-shadow(0 0 25px rgba(255, 182, 193, 1));
+            }
+            50% { 
+                transform: translateY(-10px) rotate(-5deg) scale(1.1); 
+                filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.9));
+            }
+            75% { 
+                transform: translateY(-15px) rotate(5deg) scale(1.15); 
+                filter: drop-shadow(0 0 22px rgba(255, 182, 193, 0.95));
+            }
+        }
+
+        /* Love Quote Section */
+        .love-quote {
+            margin: 4rem auto 2rem;
+            max-width: 800px;
+            opacity: 0;
+            animation: quoteEntrance 3s ease 4s forwards;
+        }
+
+        @keyframes quoteEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-author {
+            text-align: center;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .title-icons {
+                gap: 1rem;
+            }
+
+            .title-icon {
+                font-size: 2rem;
+            }
+
+            .message-card {
+                margin: 2rem auto;
+                padding: 2rem;
+            }
+
+            .message-text {
+                font-size: 1.2rem;
+                line-height: 1.8;
+            }
+
+            .video-section {
+                margin: 2rem auto;
+            }
+
+            .bottom-hearts {
+                gap: 1rem;
+            }
+
+            .bottom-hearts span {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.3rem;
+            }
+
+            .star-decoration {
+                gap: 0.5rem;
+            }
+
+            .message-emojis {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-section {
+                margin-bottom: 2rem;
+            }
+
+            .message-card {
+                padding: 1.5rem;
+            }
+
+            .message-text {
+                font-size: 1.1rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Starry Sky -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" id="floating-hearts"></div>
+    
+    <!-- Magical Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Title Section -->
+        <div class="title-section">
+            <div class="title-icons">
+                <span class="title-icon">💖</span>
+                <span class="title-icon">✨</span>
+                <span class="title-icon">💖</span>
+            </div>
+            
+            <h1 class="main-title">Para Você,</h1>
+            <h2 class="subtitle">Meu Amor Eterno 💕</h2>
+            
+            <div class="star-decoration">
+                <span>⭐</span>
+                <span>⭐</span>
+                <span>⭐</span>
+                <span>⭐</span>
+                <span>⭐</span>
+            </div>
+        </div>
+
+        <!-- Message Card -->
+        <div class="message-card">
+            <div class="message-icon">💝</div>
+            
+            <div class="message-text">
+                Eu só quero que você saiba o quanto você é <strong>especial</strong> para mim.
+            </div>
+            
+            <div class="message-text">
+                Onde quer que você vá, eu sigo, não importa a <strong>distância</strong>.
+            </div>
+            
+            <div class="message-text">
+                Se a vida fosse um filme, você seria a <strong>melhor parte</strong> 💖
+            </div>
+            
+            <div class="message-emojis">
+                <span>💕</span>
+                <span>✨</span>
+                <span>🌟</span>
+                <span>✨</span>
+                <span>💕</span>
+            </div>
+        </div>
+
+        <!-- Love Quote -->
+        <div class="love-quote">
+            <div class="quote-text">
+                "Em todos os mundos, em todas as vidas, em todos os universos... eu sempre vou te escolher."
+            </div>
+            <div class="quote-author">— Para sempre seu 💖</div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <div class="video-container">
+                <video autoplay loop muted playsinline>
+                    <source src="./video.mp4.mp4" type="video/mp4">
+                    <div class="video-placeholder">
+                        Nosso momento especial aqui 💖<br><br>
+                        <small style="opacity: 0.9; font-size: 1rem;">Coloque o arquivo "video.mp4" na mesma pasta</small>
+                    </div>
+                </video>
+            </div>
+        </div>
+
+        <!-- Bottom Hearts -->
+        <div class="bottom-hearts">
+            <span>💕</span>
+            <span>💖</span>
+            <span>💗</span>
+            <span>💝</span>
+            <span>💘</span>
+        </div>
+    </div>
+
+    <script>
+        // Create enhanced starry sky
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 150;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                const size = Math.random();
+                
+                if (size < 0.6) {
+                    star.className = 'star small';
+                } else if (size < 0.9) {
+                    star.className = 'star medium';
+                } else {
+                    star.className = 'star large';
+                }
+                
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                starsContainer.appendChild(star);
+            }
+
+            // Add shooting stars
+            for (let i = 0; i < 3; i++) {
+                const shootingStar = document.createElement('div');
+                shootingStar.className = 'shooting-star';
+                shootingStar.style.top = Math.random() * 50 + '%';
+                shootingStar.style.animationDelay = Math.random() * 10 + 's';
+                shootingStar.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                starsContainer.appendChild(shootingStar);
+            }
+        }
+
+        // Create floating hearts with enhanced variety
+        function createFloatingHeart() {
+            const heartsContainer = document.getElementById('floating-hearts');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            
+            const heartTypes = ['💕', '💖', '💗', '💝', '💘', '❤️', '💙', '💜', '🤍', '🧡'];
+            heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            
+            heartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.remove();
+                }
+            }, 9000);
+        }
+
+        // Create magical particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 40;
+            const colors = [
+                '#ff6b9d', '#feca57', '#ff9ff3', '#54a0ff', '#5f27cd',
+                '#ff6348', '#2ed573', '#ffa502', '#3742fa', '#f368e0'
+            ];
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.animationDelay = Math.random() * 12 + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                particle.style.boxShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]}`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Enhanced initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            createParticles();
+            
+            // Create floating hearts more frequently
+            setInterval(createFloatingHeart, 600);
+            
+            // Add some immediate hearts
+            for (let i = 0; i < 5; i++) {
+                setTimeout(createFloatingHeart, i * 200);
+            }
+        });
+
+        // Add mouse interaction for extra magic
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() < 0.1) {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.width = '4px';
+                sparkle.style.height = '4px';
+                sparkle.style.background = '#feca57';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '1000';
+                sparkle.style.animation = 'sparkle 1s ease-out forwards';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+
+        // Add sparkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkle {
+                0% {
+                    transform: scale(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
