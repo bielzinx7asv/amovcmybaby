@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Você, Meu Amor Eterno 💖</title>
+    <title>Para Você, Minha Princesa 💖</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -812,22 +812,34 @@
             <div class="quote-text">
                 "Em todos os mundos, em todas as vidas, em todos os universos... eu sempre vou te escolher."
             </div>
-            <div class="quote-author">— Para sempre seu 💖</div>
+            <div class="quote-author"> Para sempre seu 💖</div>
         </div>
 
-        <!-- Video Section -->
-        <div class="video-section">
-            <div class="video-container">
-                <video autoplay loop muted playsinline>
-                    <source src="./video.mp4.mp4" type="video/mp4">
-                    <div class="video-placeholder">
-                        Nosso momento especial aqui 💖<br><br>
-                        <small style="opacity: 0.9; font-size: 1rem;">Coloque o arquivo "video.mp4" na mesma pasta</small>
-                    </div>
-                </video>
-            </div>
-        </div>
+    <!-- Video Section -->
+<div class="video-section">
+    <div class="video-container">
+        <video id="meuVideo" autoplay muted loop playsinline>
+            <source src="./video.mp4.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+        </video>
+        <button id="btnSom" style="margin-top:10px; padding:8px 16px; font-size:1rem; cursor:pointer;">
+            Ativar Som
+        </button>
+    </div>
+</div>
 
+<script>
+    const video = document.getElementById('meuVideo');
+    const btnSom = document.getElementById('btnSom');
+
+    btnSom.addEventListener('click', () => {
+        if (video.muted) {
+            video.muted = false; // libera som
+            video.play();        // toca com som
+            btnSom.style.display = 'none'; // esconde botão
+        }
+    });
+</script>
         <!-- Bottom Hearts -->
         <div class="bottom-hearts">
             <span>💕</span>
